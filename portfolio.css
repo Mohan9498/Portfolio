@@ -1,0 +1,163 @@
+:root {
+    --primary-dark: #452829;
+    --secondary-dark: #57595b;
+    --secondary-light: #e8d1c5;
+    --primary-light: #ffff;
+}
+
+/* @font-face {
+    font-family: ;
+    src: url();
+} */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+}
+
+main {
+    max-width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav {
+    /* background-color: blueviolet; */
+    height: 75vh;
+    width: 150px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+nav a img {
+    width: 40%;
+}
+
+nav a {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+}
+
+nav a span {
+    opacity: 0;
+    position: relative;
+    left: 50px;
+    z-index: -1;
+}
+
+nav img:hover {
+    transition: all 0.3s ease-out;
+    transform: scale(1.2);
+}
+
+nav a:hover span {
+    animation: drag 2s ease-in-out forwards;
+}
+
+@keyframes drag {
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+main>.container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Home */
+main>.home {
+    background-color: rgba(64, 224, 208, 0.637);
+    display: grid;
+    /* place-items: center; */
+}
+
+.home img {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.home>h2 {
+    font-size: 3rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    margin-left: 15px;
+
+    span {
+        color: #ff8733;
+    }
+}
+
+.home>.text {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+    color: white;
+
+    .primary-para {
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        font-size: 2.4rem;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .tag-line {
+        font-size: 1.2rem;
+    }
+
+    span {
+        color: #ff8733;
+    }
+}
+
+/* about */
+main>.about {
+    background-color: rgb(255, 219, 39);
+}
+
+/* services */
+main>.service {
+    background-color: violet;
+}
+
+/* project */
+main>.project {
+    background-color: steelblue;
+}
+
+/* contact */
+main>.contact {
+    background-color: lawngreen;
+}
